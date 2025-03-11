@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'GalanoGrotesque';
+    src: url('assets/fonts/GalanoGrotesqueMedium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GalanoGrotesque';
+    src: url('assets/fonts/GalanoGrotesqueBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: 'GalanoGrotesque', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Deixa o header fixo */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Container flexível */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 20px;
+}
+
+/* Ajusta a logo */
+.logo-center {
+    flex-grow: 0;
+    display: flex;
+    justify-content: center;
+    min-width: 150px;
+}
+
+.logo-center img {
+    max-height: 60px;
+    width: auto;
+}
+
+/* Expande os menus */
+.menu-left, .menu-right {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
+}
+
+/* Ajusta os links */
+.menu-left ul, .menu-right ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.menu-left a, .menu-right a {
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.menu-left a:hover, .menu-right a:hover {
+    color: #007bff;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .header-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu-left, .menu-right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .menu-left ul, .menu-right ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .logo-center {
+        order: -1; /* Coloca a logo no topo */
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-left, .menu-right {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-left.active, .menu-right.active {
+        display: flex;
+    }
+}
