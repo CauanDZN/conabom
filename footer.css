@@ -1,0 +1,35 @@
+.site-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-content img {
+    width: 80%;
+    max-width: 800px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .footer-content img {
+        width: 60%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content img {
+        width: 80%;
+        max-width: 250px;
+    }
+}
